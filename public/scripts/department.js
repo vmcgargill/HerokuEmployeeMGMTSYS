@@ -21,33 +21,27 @@ const DisplayDepartments = (departments) => {
         <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Budget</th>
         </tr>`
     )
 
-    const CreateList = (id, name, budget) => {
+    const CreateList = (id, name) => {
       const item = `
         <tr value='${id}'>
             <td>${id}</td>
             <td>${name}</td>
-            <td>${budget}</td>
         </tr>`
       return item;
     };
 
+    departments.forEach((department) => {
+      const departmentItem = CreateList(department.id, department.name);
+      DepartmentList.push(departmentItem);
+    });
+
     let table = $('<table>');
     table.append(DepartmentList);
-    departments.forEach((department) => {
-      let budget = 0;
-      GetDepartmentBudget(department.id).then(function(resp) {
-        resp.forEach((employee) => {budget += employee.salary});
-        const departmentItem = CreateList(department.id, department.name, USDformatter.format(budget));
-        table.append(departmentItem);
-        tableDiv.append(table);
-        console.log(budget)
-      });
-    });
-};
+    tableDiv.append(table);
+  };
 
 const USDformatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
