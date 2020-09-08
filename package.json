@@ -1,31 +1,25 @@
 {
-  "name": "12employeemanagementsystem",
+  "name": "herokuemployeemgmtsys",
   "version": "1.0.0",
-  "description": "An app the manages a employee database",
-  "main": "app.js",
+  "description": "For Heroku Deployment Only",
+  "main": "HerokuServer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vmcgargill/12EmployeeManagementSystem.git"
+    "url": "git+https://github.com/vmcgargill/HerokuEmployeeMGMTSYS.git"
   },
-  "keywords": [
-    "Employee",
-    "Management",
-    "System"
-  ],
-  "author": "Vincent J McGargill",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vmcgargill/12EmployeeManagementSystem/issues"
+    "url": "https://github.com/vmcgargill/HerokuEmployeeMGMTSYS/issues"
   },
-  "homepage": "https://github.com/vmcgargill/12EmployeeManagementSystem#readme",
+  "homepage": "https://github.com/vmcgargill/HerokuEmployeeMGMTSYS#readme",
   "dependencies": {
-    "console.table": "^0.10.0",
     "express": "^4.17.1",
-    "inquirer": "^7.3.3",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "sql": "^0.78.0"
   }
 }
